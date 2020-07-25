@@ -21,3 +21,17 @@ source ~/multibot_ws/devel/setup.bash
 ```bash
 roslaunch neuronbot2_multibot start.launch
 ```
+
+## If Error Messages occur
+```
+ERROR: the following packages/stacks could not have their rosdep keys resolved
+to system dependencies:
+neuronbot2_bringup: No definition of [robot_pose_ekf] for OS version []
+neuronbot2_slam: No definition of [gmapping] for OS version []
+```
+
+Sol:
+```
+$rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:bionic
+```
+The assignment of the version of ubuntu is a **MUST**.
