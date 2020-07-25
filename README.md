@@ -22,6 +22,13 @@ source ~/multibot_ws/devel/setup.bash
 roslaunch neuronbot2_multibot start.launch
 ```
 
+## Behavior Tree Revision Issues
+`result = tree->root_node->executeTick();`
+becomes
+`result = tree->tickRoot();`
+ref: https://github.com/ros-planning/navigation2/issues/1686
+
+
 ## If Error Messages occur
 ```
 ERROR: the following packages/stacks could not have their rosdep keys resolved
